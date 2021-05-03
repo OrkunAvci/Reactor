@@ -4,8 +4,11 @@ const client = new Discord.Client();
 
 const fs = require(`fs`);
 
+const {
+	token
+} = require(`./config.json`);
+
 let {
-	token,
 	prefix
 } = require(`./config.json`);
 
