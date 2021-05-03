@@ -1,8 +1,12 @@
+const {
+  channelName
+} = require("../config.json");
+
 module.exports = {
   name: "react",
   description: "add reactions to all messages in a specific channel",
   async execute(message) {
-    const channel = message.guild.channels.cache.find((c) => c.name === "sorular");
+    const channel = message.guild.channels.cache.find((c) => c.name === channelName);
 
     if (!channel) {
       return message.reply("channel doesn't exist.");
