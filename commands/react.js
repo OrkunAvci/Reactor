@@ -1,6 +1,6 @@
 module.exports = {
   name: "react",
-  description: "add reactions to all",
+  description: "add reactions to all messages in a specific channel",
   async execute(message) {
     const channel = message.guild.channels.cache.find((c) => c.name === "sorular");
 
@@ -21,6 +21,7 @@ module.exports = {
             msg.react("🇪");
           }
         });
+      return;
     } else {
       message.reply("Wrong channel. Try again.");
       return;
