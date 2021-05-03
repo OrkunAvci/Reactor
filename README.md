@@ -7,8 +7,9 @@ https://discord.com/api/oauth2/authorize?client_id=838813658225180693&permission
 
 Prefix is "--".
 
-
 It has admin permissions to skip over permission based errors while we continue to develop the bot.
+
+Channel name for --react is taken from config.json, and we plan to make is customizeable, too.
 
 # Commands
 
