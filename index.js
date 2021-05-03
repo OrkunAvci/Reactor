@@ -29,16 +29,15 @@ client.on('message', message => {
 	const args = message.content.slice(prefix.length).trim().split(' ');
 	const command = args.shift().toLowerCase();
 
-	if (message.content === `--ping`) {
-		message.channel.send('Pong.');
-	} else if (message.content.includes(`?`)) {
-		client.commands.get(`react_q`).execute(message);
-	} else if (command === `react`) {
-		client.commands.get(`react`).execute(message);
-	} else if (command === `clear`) {
-		client.commands.get(`clear`).execute(message, args);
+	if (client.commands.get(command) === undefined) {
+		message.reply(`no ${command} command exists. Refer to documentation.`)
+			.then((msg) => {
+				msg.delete({
+					timeout: 3000
+				});
+			});
 	} else {
-		return;
+		client.commands.get(command).execute(message, args);
 	}
 
 });
