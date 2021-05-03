@@ -32,15 +32,15 @@ client.on('message', message => {
 	const args = message.content.slice(prefix.length).trim().split(' ');
 	const command = args.shift().toLowerCase();
 
-	if (client.commands.get(command) === undefined) {
+	if (command === `prefix`) {
+		prefix = args[0];
+	} else if (client.commands.get(command) === undefined) {
 		message.reply(`no ${command} command exists. Refer to documentation.`)
 			.then((msg) => {
 				msg.delete({
 					timeout: 3000
 				});
 			});
-	} else if (command === `prefix`) {
-		prefix = args[0];
 	} else {
 		client.commands.get(command).execute(message, args);
 	}
