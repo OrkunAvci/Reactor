@@ -1,9 +1,9 @@
-## Reactor
+# Reactor
 
-# Invite the bot
+## Invite the bot
 
 https://discord.com/api/oauth2/authorize?client_id=838813658225180693&permissions=8&scope=bot
-# Defaults
+## Defaults
 
 Prefix is "--".
 
@@ -11,7 +11,7 @@ It has admin permissions to skip over permission based errors while we continue 
 
 Channel name for --react is taken from config.json, and we plan to make is customizeable, too.
 
-# Commands
+## Commands
 
 --prefix
 
