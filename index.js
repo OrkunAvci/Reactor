@@ -4,7 +4,7 @@ const client = new Discord.Client();
 
 const fs = require(`fs`);
 
-const {
+let {
 	token,
 	prefix
 } = require(`./config.json`);
@@ -36,11 +36,12 @@ client.on('message', message => {
 					timeout: 3000
 				});
 			});
+	} else if (command === `prefix`) {
+		prefix = args[0];
 	} else {
 		client.commands.get(command).execute(message, args);
 	}
 
 });
-
 
 client.login(token);
