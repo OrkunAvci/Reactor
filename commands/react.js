@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const {
   channelName
 } = require("../config.json");
@@ -13,7 +14,8 @@ module.exports = {
     }
 
     if (message.channel === channel) {
-      await message.channel.messages.fetch()
+      await message.delete();
+      await channel.messages.fetch({limit: 100})
         .then((messages) => {
           const messagesArr = messages.array();
 
@@ -24,6 +26,16 @@ module.exports = {
             msg.react("🇩");
             msg.react("🇪");
           }
+
+          return messages.size;
+        })
+        .then((msgNum) => {
+          return channel.send(`Reacting to ${msgNum} messages.`);
+        })
+        .then((msg) => {
+          msg.delete({
+            timeout: 3000
+          });
         });
       return;
     } else {
