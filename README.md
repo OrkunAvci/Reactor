@@ -9,13 +9,13 @@ Prefix is "--".
 
 It has admin permissions to skip over permission based errors while we continue to develop the bot.
 
-Channel name for --react is taken from config.json, and we plan to make is customizeable, too.
+Channel name for --react is taken from config.json, and we plan to make it customizable, too.
 
 ## Commands
 
 --prefix
 
-Changes the prefix. Only takes notice of first argument. Not much control on the prefix for now.
+Changes the prefix. Only takes notice of first argument. Not much control on what the new prefix is for now.
 
 --clear
 
