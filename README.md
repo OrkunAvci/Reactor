@@ -25,3 +25,7 @@ Uses bulkDelete() of channel object. Only accepts numbers between 2 and 100 as a
 
 Adds reactions to all messages in a channel with a spesific name.
 
+--prep
+
+Adds an announcement channel and makes it read-only for everyone. This is a demo version of the command. Full version will support an overhaul of the server.
+
