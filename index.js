@@ -28,10 +28,10 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-	if (message.channel === channelName)
-	{
+	const messageChannel = message.guild.channels.cache.find(
+		(c) => c.name === channelName
+	);
+	if (message.channel === messageChannel) {
 		message.react("🇦");
 		message.react("🇧");
 		message.react("🇨");
@@ -39,6 +39,8 @@ client.on('message', message => {
 		message.react("🇪");
 		return;
 	}
+
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).trim().split(' ');
 	const command = args.shift().toLowerCase();
