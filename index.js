@@ -5,7 +5,8 @@ const client = new Discord.Client();
 const fs = require(`fs`);
 
 const {
-	token
+	token,
+	channelName
 } = require(`./config.json`);
 
 let {
@@ -28,6 +29,16 @@ client.on('ready', () => {
 client.on('message', message => {
 
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+	if (message.channel === channelName)
+	{
+		message.react("🇦");
+		message.react("🇧");
+		message.react("🇨");
+		message.react("🇩");
+		message.react("🇪");
+		return;
+	}
 
 	const args = message.content.slice(prefix.length).trim().split(' ');
 	const command = args.shift().toLowerCase();
