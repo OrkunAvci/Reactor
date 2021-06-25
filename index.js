@@ -27,11 +27,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-
-	const messageChannel = message.guild.channels.cache.find(
-		(c) => c.name === channelName
-	);
-	if (message.channel === messageChannel && !message.content.startsWith(prefix) && !message.author.bot) {
+	if (message.channel.name === channelName && !message.content.startsWith(prefix) && !message.author.bot) {
 		message.react("🇦");
 		message.react("🇧");
 		message.react("🇨");
